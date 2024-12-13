@@ -32,6 +32,19 @@ router.post('/register', (req, res) => {
 
 })
 
+router.get('/olvide-password', (req, res) => {
+    res.render('auth/olvide-password',{
+        layout: 'base',
+        estilo: "/css/olvide-pass.css",
+        titulo: "Recuperar Contraseña"
+    });
+})
+
+router.post('/olvide-password', (req, res) => {
+    const { email } = req.body;
+    //Aqui deberia partir la parte de codigo que corresponde a Esteban, el email del usuario ya esta en la variable email
+    res.send(`Proceso de reinicio de contraseña para: ${email}`);
+})
 
 
 module.exports = router
