@@ -1,3 +1,4 @@
+const path = require('node:path')
 const express = require('express')
 const cors = require('cors')
 const { loggerRequest } = require('./logger.mid')
@@ -9,7 +10,7 @@ const middlewares = (app) => {
   app.use(express.json())
   app.use(cors())
   // public
-  app.use(express.static(__dirname + '../public'));
+  app.use(express.static(path.join(__dirname , '..', 'public')));
   // logger
   app.use(loggerRequest)
   // documentacion
