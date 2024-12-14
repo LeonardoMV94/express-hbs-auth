@@ -24,6 +24,8 @@ router.post("/login", (req, res) => {
 router.get("/register", (req, res) => {
   res.render("auth/registro", {
     layout: "base",
+    estilo: "/css/registro.css",
+    titulo: "Registro",
   });
 });
 
