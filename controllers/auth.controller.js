@@ -10,8 +10,8 @@ router.get("/login", (req, res) => {
 });
 // <form action="/auth/login" method="post">
 router.post("/login", (req, res) => {
-  const { username, email, password } = req.body;
-
+  const { email, password } = req.body;
+  console.log( email, password)
   // proceso de inicio de sesion
 
   // localhost:port/
@@ -21,7 +21,6 @@ router.post("/login", (req, res) => {
 });
 
 // <form action="/auth/login">
-
 router.get('/register', (req, res) => {
 
     res.render('auth/registro',{
@@ -72,7 +71,7 @@ router.get("/confirmar-cuenta", (req, res) => {
 
 router.post("/confirmar-cuenta", (req, res) => {
   const { codigo } = req.body;
-  console.log(codigo);
+  console.log("codigo de formulario: ",codigo);
 
   res.render("home", {
     layout: "base",
