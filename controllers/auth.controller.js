@@ -46,6 +46,14 @@ router.post('/olvide-password', (req, res) => {
     res.send(`Proceso de reinicio de contraseña para: ${email}`);
 })
 
+router.get('/reset-password', (req, res) => {
+    res.render('auth/reset-password',{
+        layout: 'base',
+        estilo: "/css/reset-password.css",
+        titulo: "email"
+    });
+})
+
 router.post('/reset-password', (req, res) =>{
     const { password, confirmarPassword } = req.body;
     //Aqui deberia partir la parte de codigo que corresponde a Esteban, el password y confirmar password ya estan en las variables password y confirmarPassword
