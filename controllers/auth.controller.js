@@ -21,11 +21,7 @@ router.post("/login", (req, res) => {
 });
 
 // <form action="/auth/login">
-router.get("/register", (req, res) => {
-  res.render("auth/registro", {
-    layout: "base",
-  });
-});
+
 router.get('/register', (req, res) => {
 
     res.render('auth/registro',{
@@ -35,7 +31,7 @@ router.get('/register', (req, res) => {
     });
 })
 
-router.post("/register", (req, res) => {});
+
 router.post('/register', (req, res) => {
     const { nombre, apellido, email, password } = req.body;
     console.log(`Registro recibido: Nombre=${nombre}, Apellido=${apellido}, Email=${email}, Contraseña=${password}`);
