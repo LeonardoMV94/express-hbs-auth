@@ -21,13 +21,27 @@ router.post("/login", (req, res) => {
 });
 
 // <form action="/auth/login">
-router.get("/register", (req, res) => {
-  res.render("auth/registro", {
-    layout: "base",
-  });
-});
 
-router.post("/register", (req, res) => {});
+router.get('/register', (req, res) => {
+
+    res.render('auth/registro',{
+        layout: 'base',
+        estilo: "/css/registro.css",
+        titulo: "Registro"
+    });
+})
+
+
+router.post('/register', (req, res) => {
+    const { nombre, apellido, email, password } = req.body;
+    console.log(`Registro recibido: Nombre=${nombre}, Apellido=${apellido}, Email=${email}, Contraseña=${password}`);
+    res.render('auth/confirmar-cuenta',{
+    layout: 'base',
+    estilo: "/css/confirmar.css",
+    titulo: "Confirmar Cuenta"
+    });
+})
+
 
 router.get("/olvide-password", (req, res) => {
   res.render("auth/olvide-password", {
