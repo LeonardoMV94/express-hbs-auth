@@ -17,6 +17,11 @@ class TransferService {
     }
   }
 
+  async getAll(){
+    const clientes = pool.query("SELECT * FROM clientes;")
+    if (clientes < 0) throw new Error('No hay clientes.')
+  }
+
   async updateBalance ({ accountOrigin, accountDestiny, amount }) {
     try {
       // 1. Inicia la transacción
