@@ -40,6 +40,7 @@ export default function validacionRegistro() {
             event.preventDefault(); // Previene el envío solo si hay errores
             alert(errores.join('\n'));
         }
+        
     })
 
 }
