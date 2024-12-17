@@ -1,12 +1,14 @@
 const express = require('express')
 const routes = require('./routers/router')
-const middlewares = require('./middlewares/index')
-const config = require('./config')
+const middlewaresGlobales = require('./middlewares/index')
+const configuracionExpress = require('./lib/config.express')
+const variablesEntorno = require('./config')
 
 const app = express()
-const port = config.port
+const port = variablesEntorno.port
 
-middlewares(app)
+configuracionExpress(app)
+middlewaresGlobales(app)
 routes(app)
 
 app.listen(port, () => {
