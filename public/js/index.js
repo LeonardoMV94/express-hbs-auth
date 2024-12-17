@@ -1,7 +1,6 @@
 
 import validacionRegistro from './validacionRegistro.js'
 import validacionLogin from './validacionLogin.js';
-import validacionRegistro from "./validacionRegistro.js";
 import validacionConfirmar from "./validacionConfirmar.js";
 
 document.addEventListener("DOMContentLoaded", () => {
