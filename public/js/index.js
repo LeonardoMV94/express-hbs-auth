@@ -1,4 +1,5 @@
 import validacionRegistro from './validacionRegistro.js'
+import validacionLogin from './validacionLogin.js';
 // import validacionLogin from './validacionLogin.js'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (window.location.pathname === '/auth/login') {
-        // validacionLogin();
+        validacionLogin();
     }
 
 })
