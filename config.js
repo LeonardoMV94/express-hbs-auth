@@ -6,7 +6,8 @@ if (!process.env.DATABASE_URL) {
 const envs = {
   isProd: process.env.NODE_ENV === 'production',
   databaseUrl: process.env.DATABASE_URL,
-  port: process.env.PORT || 3000
+  port: process.env.PORT || 3000,
+  sessionSecret: process.env.SECRET_SESSION || 'abuela'
 }
 
 module.exports = envs
