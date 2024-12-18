@@ -4,7 +4,7 @@ const config = require("../config");
 const db = new Sequelize(config.databaseUrl, {
   dialect: "postgres",
   logging: (sql, timing) => {
-    console.log(`[Sequelize] Consulta: ${sql} | Tiempo: ${JSON.stringify(timing)}`)
+    console.log("\x1b[33m",`[Sequelize] Consulta: ${sql}`)
   },
   define: {
     timestamps: true // añade 2 columnas, created_at y updated_at
